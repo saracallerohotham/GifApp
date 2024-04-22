@@ -18,7 +18,7 @@ function GifExpertApp() {
   return (
     <>
 
-      <h1>GifExpertApp</h1>
+      <h1 className="extravagant-title">Gif Expert App</h1>
 
       <AddCategory       
       onNewCategory={onAddCategory} 

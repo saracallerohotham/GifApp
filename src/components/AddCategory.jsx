@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function AddCategory({ onNewCategory }) {
-  const [inputValue, setinputValue] = useState("Por defecto");
+  const [inputValue, setinputValue] = useState("");
 
   const onInputChange = ({ target }) => {
     setinputValue(target.value);
@@ -16,9 +16,9 @@ function AddCategory({ onNewCategory }) {
 
   return (
     <form onSubmit={onSubmit}>
-      <input
+      <input className="search-input"
         type="text"
-        placeholder="buscar gifs"
+        placeholder="Buscar gifs"
         value={inputValue}
         onChange={onInputChange}
       />

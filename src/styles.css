@@ -1,63 +1,131 @@
+/* Estilos CSS para una página de gifs */
+
+/* Paleta de colores */
+:root {
+  --primary-color: #ffffff; /* Púrpura */
+  --background-color: #ece2e8; /* Gris claro */
+  --text-color: #221f1f; /* Texto oscuro */
+}
+
+/* Fuente */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap');
+
+/* Estilos generales */
 * {
-  font-family: Helvetica, Arial, sans-serif;
-  background-color: rgb(234, 234, 234);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
+  background: linear-gradient(90deg, #fda009, #f2d358); /* Degradado de gris a rosa */
+  color: var(--text-color);
   padding: 60px;
 }
 
-input {
-  background-color: white;
-  border-radius: 5px;
-  border: 1px solid rgb(97, 32, 158);
-  color: black;
-  font-size: 1.2rem;
-  outline: none;
-  padding: 10px 15px;
-  width: 100%;
-}
-
-h2 {
-  font-size: 1.5rem;
+h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--primary-color);
 }
 
 h3 {
-  font-size: 3rem;
-  margin-bottom: 5px;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: white;
 }
 
+/* Estilos de la cuadrícula de tarjetas */
 .card-grid {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .card {
-  align-content: center;
-  align-items: center;
-  background-color: white;
+  background-color: transparent;
   border-radius: 10px;
-  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.03);
-  display: flex;
-  flex-direction: column;
-  height: 0%;
-  justify-content: center;
-  margin-bottom: 20px;
-  margin-right: 20px;
-  overflow: hidden;
-}
-
-.card p {
-  background-color: white;
-  flex: 1;
-  font-size: 1.5rem;
-  margin-top: 5px;
-  padding: 5px 20px 0px 20px;
-  text-align: center;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
+  margin: 0 10px 20px;
+  padding: 10px;
+  width: calc(33.33% - 40px);
 }
 
 .card img {
   width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.card p {
+  font-size: 1rem;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+/* Estilos del input de búsqueda */
+.search-input {
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: 3px solid #ff0000; /* Establece un borde inicial */
+  color: var(--text-color);
+  font-size: 1.2rem;
+  outline: none;
+  padding: 10px 15px;
+  width: 50%;
+  margin: 0 auto; /* Centra horizontalmente */
+  display: block; /* Asegura que ocupe el ancho especificado */
+  margin-bottom: 20px;
+  position: relative; /* Se agrega posición relativa para el efecto del borde */
+  animation: borderAnimation 3s infinite; /* Agrega la animación */
+}
+
+/* Animación del borde */
+@keyframes borderAnimation {
+  0% {
+    border-color: #eaff00; /* Color inicial del borde */
+    transform: translateX(-3); /* Inicia sin desplazamiento */
+  }
+  100% {
+    border-color: #fda0f7; /* Color final del borde */
+    transform: translateX(3); /* Mantener el mismo desplazamiento */
+  }
+}
+
+
+/* Responsive */
+
+/* Estilos del input de búsqueda */
+.search-input {
+  /* Otros estilos aquí */
+
+  width: 80%; /* Cambia el ancho a un valor porcentual */
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 30px; /* Reduce el relleno del cuerpo */
+  }
+
+  h1 {
+    font-size: 2rem; /* Reduce el tamaño del título principal */
+  }
+
+  .card-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    max-width: 300px;
+  }
 }
